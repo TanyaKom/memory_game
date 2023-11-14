@@ -9,7 +9,7 @@ function resetBoard() {
 	firstTurnedCard = null;
 	secondTurnedCard = null;
 }
-
+ 
 function turnOverCards() {
 	setTimeout(function () {
 		firstTurnedCard.classList.remove("flip");
