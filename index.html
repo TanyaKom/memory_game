@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/game.css">
+	</head>
+	<body>
+		<section class="start-page">
+			<div id="game-container" class="initial-bckg"></div>
+			<button id="startButton" onclick="startGame()">Start Game</button>
+		</section>
+			<div id="timer">1:00</div>
+
+		<section class="memory-game">
+			<div class="memory-card" data-framework="Cat">
+				<img class="front-face" src="/project/img_new/cat.jpeg" alt="Cat" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+			<div class="memory-card" data-framework="Cat">
+				<img class="front-face" src="/project/img_new/cat.jpeg" alt="Cat" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+
+			<div class="memory-card" data-framework="Dog">
+				<img class="front-face" src="/project/img_new/dog.jpeg" alt="Dog" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+			<div class="memory-card" data-framework="Dog">
+				<img class="front-face" src="/project/img_new/dog.jpeg" alt="Dog" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+
+			<div class="memory-card" data-framework="Dragon">
+				<img class="front-face" src="/project/img_new/dragon.jpeg" alt="Dragon" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+			<div class="memory-card" data-framework="Dragon">
+				<img class="front-face" src="/project/img_new/dragon.jpeg" alt="Dragon" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+
+			<div class="memory-card" data-framework="Duck">
+				<img class="front-face" src="/project/img_new/duck.jpeg" alt="Duck" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+			<div class="memory-card" data-framework="Duck">
+				<img class="front-face" src="/project/img_new/duck.jpeg" alt="Duck" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+
+			<div class="memory-card" data-framework="Flamingo">
+				<img class="front-face" src="/project/img_new/flamingo.jpeg" alt="Flamingo" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+			<div class="memory-card" data-framework="Flamingo">
+				<img class="front-face" src="/project/img_new/flamingo.jpeg" alt="Flamingo" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+
+			<div class="memory-card" data-framework="Fox">
+				<img class="front-face" src="/project/img_new/fox.jpeg" alt="Fox" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+			<div class="memory-card" data-framework="Fox">
+				<img class="front-face" src="/project/img_new/fox.jpeg" alt="Fox" />
+				<img class="back-face" src="/project/img_new/back.jpeg" alt="JS Back_side" />
+			</div>
+		</section>
+	
+		<div id="finishWindow" class="finish">
+			<div class="popup">
+				<h2>YOU WIN!</h2>
+				<p>Play again?</p>
+				<button class="play-again-button" onclick="playAgain()">Yes</button>
+			</div>
+		</div>
+		<div id="lose game" class="lose">
+			<div class="loser">
+				<h2>You lose! Time is up.</h2>
+				<p>Play again?</p>
+				<button class="play-again-button" onclick="playAgain()">Yes</button>
+			</div>
+		</div>
+		<script src="./script.js"></script>
+	</body>
+</html>

@@ -1,0 +1,152 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    background: #3336f4;
+}
+
+ .memory-game{
+    display: none;
+    width: 640px;
+    height: 640px;
+    margin: auto;
+    flex-wrap: wrap;
+    perspective: 1000px;
+    justify-content: center;
+    align-items: center;
+}
+
+.memory-card {
+    width: calc(25% - 10px);
+    height: calc(33.333% - 10px);
+    margin: 5px;
+    position: relative;
+    transform: scale(1);
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.memory-card:active {
+    transform: scale(0.97);
+    transition: transform 0.2s;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-face,
+.back-face {
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    position: absolute;
+    border-radius: 5px;
+    background: #1c7ccc;
+    backface-visibility: hidden;
+}
+
+.front-face {
+    transform: rotateY(180deg);
+}
+
+#startButton {
+    position: absolute;
+    top:40%;
+    left: 45%;
+    background-color:#ffffff;
+    color: #1c7ccc;
+    border:none;
+    min-height:30px; 
+    min-width: 120px;
+    border-radius: 5px;
+    margin: 30px;
+}
+
+#startButton:hover {
+    background-color:#6fbdfc;
+    transition: 0.3s;
+}
+
+#startButton.hidden {
+    display: none;
+}
+
+#timer {
+    position: absolute;
+    top:5%;
+    color: #ffffff;
+    margin: 30px;
+}
+
+.start-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3d40f3;
+}
+
+.start-page .memory-card {
+    display: none;
+}
+
+
+.finish-img {
+    display: none;
+    justify-content: center;
+    width: 640px;
+    height: 640px;
+}
+
+  .finish {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+  
+
+.lose {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    
+}
+
+.play-again-button {
+    background-color:#ffffff;
+    color: #000000;
+    border: solid;
+    min-height:20px; 
+    min-width: 60px;
+    border-radius: 5px;
+    margin: 7px;
+
+}
+
+.play-again-button:hover {
+    color:#3d40f3;
+    transition: 0.2s;
+}
