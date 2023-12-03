@@ -10,7 +10,7 @@ body {
     display: flex;
     background: #3336f4;
 }
-
+/* #region cards */
  .memory-game{
     display: none;
     width: 640px;
@@ -56,7 +56,8 @@ body {
 .front-face {
     transform: rotateY(180deg);
 }
-
+/* #endregion cards */
+/* #region button */
 #startButton {
     position: absolute;
     top:40%;
@@ -78,6 +79,7 @@ body {
 #startButton.hidden {
     display: none;
 }
+/* #endregion button */
 
 #timer {
     position: absolute;
@@ -150,3 +152,23 @@ body {
     color:#3d40f3;
     transition: 0.2s;
 }
+/* #region level */
+
+.level {
+    position: absolute;
+    top: 20%;
+    left: 45%;
+    border:none;
+    min-height:20px; 
+    min-width: 120px;
+    border-radius: 5px;
+    margin: 30px;
+    color: #1c7ccc;
+    text-align: center;
+
+}
+
+.level.hidden {
+    display: none;
+}
+/* #endregion level */

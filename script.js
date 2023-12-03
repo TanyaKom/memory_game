@@ -1,8 +1,9 @@
 const pauseTime = 1000;
 let turnCard = false;
-
 let firstTurnedCard;
 let secondTurnedCard;
+let allCards;
+// let totalCards;
 
 function resetBoard() {
 	turnCard = false;
@@ -46,27 +47,34 @@ function onClickedCard(event) {
 	}
 }
 
-function initializeBoard() {
+
+function initializeBoard(totalCards) {
 	let allCards = document.querySelectorAll(".memory-card");
 
-	allCards.forEach(function (card) {
-		const randomIndex = Math.floor(Math.random() * allCards.length);
-		card.style.order = randomIndex;
-		card.addEventListener("click", onClickedCard);
-
-	});
-}
+	if (allCards) {
+		allCards.forEach(card => {
+			card.removeEventListener("click", onClickedCard);
+		});
+	}
+		allCards = document.querySelectorAll(".memory-card");
+		allCards.forEach(function (card, index) {
+			if( index < totalCards) {
+			const randomIndex = Math.floor(Math.random() * totalCards);
+			card.style.order = randomIndex;
+			card.addEventListener("click", onClickedCard);
+			card.style.display = "block";
+			} else {
+				card.style.display = "none";
+			}
+		});
+	}
 
 function blockFirstSecondCards() {
 	firstTurnedCard.removeEventListener("click", onClickedCard);
 	secondTurnedCard.removeEventListener("click", onClickedCard);
 	resetBoard();
-	checkAllCardsOpened();
+	checkAllCardsOpened(allCards);
 }
-
-initializeBoard();
-
-
 
 let timerDisplay = document.getElementById("timer");
 let startButton = document.getElementById("startButton");
@@ -96,30 +104,40 @@ interval = setInterval(() => {
 		totalSeconds--;
 		}
 	},1000);
+	
 }
 
 function startGame() {
 	let background = document.getElementById("game-container");
+	let selectedLevel = document.getElementById("level").value;
+	let totalCards;
+	
+	if (selectedLevel === "Easy") {
+		totalCards = 8;
+	} else if (selectedLevel === "Medium") {
+		totalCards = 10;
+	} else if (selectedLevel === "Hard") {
+		totalCards = 12;
+	}
+	
+	initializeBoard(totalCards);
 
 	document.querySelector(".memory-game").style.setProperty("display", "flex");
 
 	background.classList.remove("initial-bckg");
 	background.classList.add("body");
+startTimer();
 
-	let allCards = document.querySelectorAll(".memory-card");
-	allCards.forEach(card => {
-		card.style.display = "block";
-	});
-	startTimer();
 }
-
 
 document.getElementById("startButton").addEventListener("click",function() {
 	document.querySelector(".start-page").style.display = "none";
+	document.querySelector(".level").style.display = "none";
 	document.querySelector(".memory-game").style.setProperty("display", "flex");
 
 	startGame();	
 });
+
 
 function checkAllCardsOpened() {
 let allCardsOpened = document.querySelectorAll(".memory-card");
@@ -130,15 +148,21 @@ allCardsOpened.forEach((card) => {
 		countOpened++;
 		}
 });
+console.log("count opened:", countOpened);
+
 if (countOpened === allCardsOpened.length) {
 	let openWindow = document.getElementById("finishWindow");	
 	
+console.log("displaying finish window");
+
 	openWindow.style.display = "flex";
 	return true;
 
 }
 return false;
+
 }
+checkAllCardsOpened(allCards);
 
 function playAgain() {
 	let openWindow = document.getElementById("finishWindow");

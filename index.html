@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Document</title>
+		<title>Memory Game</title>
 		<link rel="stylesheet" href="/game.css">
 	</head>
 	<body>
@@ -12,6 +12,14 @@
 			<button id="startButton" onclick="startGame()">Start Game</button>
 		</section>
 			<div id="timer">1:00</div>
+			
+		<label class="level" for="level"></label>
+			<select class="level" id="level">  
+			<option value="" disabled selected hidden>Choose level:</option>
+			<option value="Easy">Easy</option>
+			<option value="Medium">Medium</option>
+			<option value="Hard">Hard</option>
+		</select>
 
 		<section class="memory-game">
 			<div class="memory-card" data-framework="Cat">
